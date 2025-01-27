@@ -180,10 +180,10 @@ namespace WebFinalCRDUFK.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var employee1 = await _context.Employees.FindAsync(id);
-            if (employee1 != null)
+            var emp = await _context.Employees.FindAsync(id);
+            if (emp != null)
             {
-                _context.Employees.Remove(employee1);
+                _context.Employees.Remove(emp);
                 await _context.SaveChangesAsync();
             }
 
