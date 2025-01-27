@@ -1,0 +1,12 @@
+CREATE TABLE Department (
+    DeptId INT PRIMARY KEY IDENTITY(1,1),
+    DeptName NVARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Employee (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Name NVARCHAR(50) NOT NULL,
+    Gender NVARCHAR(10) NOT NULL,
+    DeptId INT NOT NULL,
+    CONSTRAINT FK_Employee_Department FOREIGN KEY (DeptId) REFERENCES Department(DeptId)
+);
