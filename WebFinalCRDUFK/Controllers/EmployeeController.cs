@@ -185,6 +185,7 @@ namespace WebFinalCRDUFK.Controllers
             {
                 _context.Employees.Remove(emp);
                 await _context.SaveChangesAsync();
+                TempData["SuccessMessage"] = "Employee Deleted successfully!";
             }
 
             return RedirectToAction(nameof(Index));
