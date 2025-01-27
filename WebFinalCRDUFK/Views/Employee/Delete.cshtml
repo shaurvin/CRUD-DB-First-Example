@@ -1,0 +1,23 @@
+﻿@model WebFinalCRDUFK.Models.EmployeeViewModel
+
+
+<h2>Delete Employee</h2>
+<div>
+    <h4>Are you sure you want to delete this?</h4>
+    <dl class="dl-horizontal">
+        <dt>Name</dt>
+        <dd>@Model.Name</dd>
+
+        <dt>Gender</dt>
+        <dd>@Model.Gender</dd>
+
+        <dt>Department</dt>
+        <dd>@Model.DepartmentName</dd>
+    </dl>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
